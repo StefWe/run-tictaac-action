@@ -1,0 +1,14 @@
+name: 'Tic-Taac'
+author: stefwe
+description: 'Threat model analysis via open-source toolkit Tic-Taac'
+inputs:
+  model-file:
+    description: 'Threat model input file'
+    required: true
+    default: 'threat-model.yml'
+#outputs:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.model-file }}
