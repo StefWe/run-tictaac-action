@@ -6,9 +6,13 @@ inputs:
     description: 'Threat model input file'
     required: true
     default: 'threat-model.yml'
+  mitigations-file:
+    description: 'Threat model mitigations file'
+    required: false
 #outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.model-file }}
+    - ${{ inputs.mitigations-file }}
